@@ -26,3 +26,30 @@ if __name__ == "__main__":
     car = Car()
     car.start()
     car.stop()
+
+# Unlike normal classes, python support multiple inheritance with interface
+
+# first interface
+class Flyable(ABC):
+    @abstractmethod
+    def fly(self):
+        pass
+
+# second interface
+class Drivable(ABC):
+    @abstractmethod
+    def drive(self):
+        pass
+
+
+class FlyingCar(Flyable, Drivable):
+    def fly(self):
+        print("Flying car")
+
+    def drive(self):
+        print("Driving car")
+
+if __name__ == "__main__":
+    flying_car = FlyingCar()
+    flying_car.fly()
+    flying_car.drive()
